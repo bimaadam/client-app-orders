@@ -7,6 +7,10 @@ on:
     tags:
       - "v*"
 
+# Add permissions block to ensure proper access
+permissions:
+  contents: write
+
 jobs:
   build:
     name: Build APK
@@ -25,7 +29,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: "3.29.3" # Ganti dengan versi Flutter yang Anda gunakan
+          flutter-version: "3.29.3"
           channel: "stable"
 
       - name: Install dependencies
@@ -38,5 +42,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: build/app/outputs/flutter-apk/app-release.apk
+          draft: false
+          generate_release_notes: true
         env:
-          GITHUB_TOKEN: ${{ secrets.KONTOL_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Changed from KONTOL_TOKEN to standard GITHUB_TOKEN
