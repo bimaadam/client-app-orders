@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_sign_in: ^6.3.0
+  lib: ^0.0.3
 
 dev_dependencies:
   flutter_test:
