@@ -124,26 +124,8 @@ class _LoginPageState extends State<LoginPage>
           child: Container(
             width: 100,
             height: 100,
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              borderRadius: BorderRadius.circular(24),
-              boxShadow: [
-                BoxShadow(
-                  color: const Color(0xFF6366F1).withOpacity(0.4),
-                  blurRadius: 20,
-                  offset: const Offset(0, 8),
-                ),
-              ],
-            ),
-            child: const Icon(
-              Icons.precision_manufacturing,
-              color: Colors.white,
-              size: 48,
-            ),
+            decoration: BoxDecoration(),
+            child: const Image(image: AssetImage("assets/AJT.png")),
           ),
         ),
       ),
